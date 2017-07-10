@@ -1,6 +1,7 @@
 {{#freestyle-guide
   title='ember-freestyle-test-addon'
   subtitle='Ember Freestyle'
+  highlightJsTheme='dracula'
   }}
 
   {{#freestyle-section name='Hello World'}}
@@ -12,14 +13,23 @@
       <h4>freestyle-annotation</h4>
       <p>
         This comment is coming from a freestyle-annotation component. Use the freestyle-annotation
-        component to write notes in html.
+        component to write notes in html. Come on.
       </p>
     {{/freestyle-annotation}}
+    {{#freestyle-note "hw--notes"}}
+      # hi there
+
+      ```css
+      .HelloWorld {
+        content: 'some fake css content';
+      }
+      ```
+    {{/freestyle-note}}
   {{/freestyle-section}}
 
   {{#freestyle-section name='Visual Style' as |section|}}
 
-    {{#freestyle-subsection name='Typography' section=section}}
+    {{#section.subsection name='Typography'}}
 
       {{#freestyle-usage 'typography-times' title='Times New Roman'}}
         {{freestyle-typeface fontFamily='Times New Roman'}}
@@ -29,9 +39,9 @@
         {{freestyle-typeface fontFamily='Helvetica'}}
       {{/freestyle-usage}}
 
-    {{/freestyle-subsection}}
+    {{/section.subsection}}
 
-    {{#freestyle-subsection name='Color' section=section}}
+    {{#section.subsection name='Color'}}
 
       {{#freestyle-usage 'fp' title='Freestyle Palette' usageTitle='Usage'}}
         {{freestyle-palette
@@ -41,7 +51,7 @@
         }}
       {{/freestyle-usage}}
 
-    {{/freestyle-subsection}}
+    {{/section.subsection}}
 
   {{/freestyle-section}}
 
